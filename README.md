@@ -1,16 +1,42 @@
-# React + Vite
+# Summer Command Center
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**A React dashboard for daily planning, habits, and reflection.**
 
-Currently, two official plugins are available:
+A personal productivity application built with React and Vite. It organizes time blocks and habits, tracks daily completion, and synchronizes a daily objective and reflection entries through Firebase Firestore.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Add, complete, and remove scheduled blocks and habits.
+- Group time blocks by school, projects, career, health, life, and reset.
+- Track overall completion and completed career/project blocks.
+- Store a daily objective and short reflection.
+- Animate list changes with Framer Motion.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Local development
 
-## Expanding the ESLint configuration
+```bash
+git clone https://github.com/Iwetter/summer-command-center.git
+cd summer-command-center
+npm ci
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The application requires a configured Firebase project and Firestore. Review `src/firebase.js` and use your own configuration and access rules before running a connected copy. The current code stores documents by date under `days`; it does not implement a separate authenticated user namespace.
+
+```bash
+npm run build
+npm run lint
+```
+
+## Source map
+
+| File | Role |
+|---|---|
+| `src/App.jsx` | Dashboard, daily state, Firestore updates, and reusable UI elements |
+| `src/firebase.js` | Firebase initialization |
+| `src/index.css`, `src/App.css` | Styles |
+| `vite.config.js` | Development and build configuration |
+
+**Tools:** React · JavaScript · Vite · Firebase · Tailwind CSS · Framer Motion
+
+[Ian Hall's engineering portfolio](https://github.com/Iwetter)
